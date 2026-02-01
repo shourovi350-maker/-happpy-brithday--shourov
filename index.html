@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Shourov 🎉</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: radial-gradient(circle at top, #1a0033, #000);
+    font-family:'Poppins',sans-serif;
+    overflow:hidden;
+}
+
+/* animated gradient lights */
+body::before{
+    content:"";
+    position:absolute;
+    width:600px;
+    height:600px;
+    background:linear-gradient(45deg,#ff00cc,#3333ff,#00ffee);
+    filter:blur(150px);
+    animation: move 8s infinite alternate;
+}
+@keyframes move{
+    from{transform:translate(-200px,-200px);}
+    to{transform:translate(200px,200px);}
+}
+
+.card{
+    position:relative;
+    padding:60px 70px;
+    border-radius:30px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter: blur(15px);
+    box-shadow:0 0 60px rgba(255,0,255,0.4);
+    text-align:center;
+    z-index:1;
+}
+
+h1{
+    margin:0;
+    font-size:64px;
+    font-weight:800;
+    background:linear-gradient(90deg,#ffdd00,#ff4ecd,#00eaff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    animation: pulse 2s infinite alternate;
+}
+
+@keyframes pulse{
+    from{text-shadow:0 0 10px #ff4ecd;}
+    to{text-shadow:0 0 35px #00eaff;}
+}
+
+h2{
+    margin-top:15px;
+    font-size:48px;
+    letter-spacing:5px;
+    color:#fff;
+}
+
+p{
+    margin-top:25px;
+    font-size:20px;
+    color:#eee;
+}
+
+span{
+    color:#ffccff;
+    font-weight:600;
+}
+
+/* confetti */
+.confetti{
+    position:absolute;
+    width:10px;
+    height:10px;
+    top:-20px;
+    animation: fall 6s linear infinite;
+}
+@keyframes fall{
+    to{transform:translateY(120vh) rotate(360deg);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>HAPPY BIRTHDAY</h1>
+    <h2>SHOUROV</h2>
+    <p>🎂 May your life be filled with  
+       <span>success</span>, <span>happiness</span> & endless joy ✨</p>
+</div>
+
+<!-- Confetti -->
+<script>
+for(let i=0;i<60;i++){
+    const c=document.createElement("div");
+    c.className="confetti";
+    c.style.left=Math.random()*100+"vw";
+    c.style.background=`hsl(${Math.random()*360},100%,60%)`;
+    c.style.animationDelay=Math.random()*5+"s";
+    document.body.appendChild(c);
+}
+</script>
+
+</body>
+</html>
